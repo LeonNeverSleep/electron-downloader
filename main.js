@@ -27,17 +27,17 @@ function createWindow() {
         console.log('Download is interrupted but can be resumed')
       } else if (state === 'progressing') {
         if (item.isPaused()) {
-          console.log('Download is paused')
+          console.log("下载暂停");
         } else {
-          console.log(`Received bytes: ${item.getReceivedBytes()}`)
+          console.log(`下载中。。。接收字节：${item.getReceivedBytes()}`);
         }
       }
     })
     item.once('done', (event, state) => {
       if (state === 'completed') {
-        console.log('Download successfully')
+        console.log("下载成功");
       } else {
-        console.log(`Download failed: ${state}`)
+        console.log("下载失败");
       }
     })
   })
